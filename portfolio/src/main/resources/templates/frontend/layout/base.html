@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- Con esto indicamos q esta plantilla va a ser heredada -->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Personal</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link th:href="@{/webjars/materializecss/css/materialize.min.css}" rel="stylesheet">
+    <!-- Favicon -->
+    <!-- <link rel="icon" type="image/png" href="images/favicon.png">
+     Estilos personalizados -->
+    <!--<style>
+        .brand-logo {
+            font-size: 1.8rem;
+            color: red;
+        }
+    </style> -->
+</head>
+
+<body>
+    <header th:replace="~{/frontend/layout/components/header :: headerBase}"> <!-- sección fija -->
+        <h3>HEADERBASE</h3>
+    </header>
+    <main> <!-- sección variable -->
+        <!-- Esto es lo que van a redifinir index, contacto, servicios, productos, etc.
+          Van a redifinir el fragment main base-->
+        <section layout:fragment="MainBase">
+            <h1>Main Base</h1>
+        </section>
+    </main>
+    <footer> <!-- sección fija -->
+        <div th:replace="~{frontend/layout/components/footer :: FooterBase}">
+            <h1>Footer Base</h1>
+        </div>
+    </footer>
+
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/materializecss/js/materialize.min.js}"></script>
+    <!-- Inicialización del menú lateral en móvil -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            M.Sidenav.init(document.querySelectorAll('.sidenav'));
+        });
+    </script>
+
+</body>
+
+</html>
