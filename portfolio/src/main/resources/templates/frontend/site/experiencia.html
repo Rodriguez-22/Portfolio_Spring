@@ -1,16 +1,23 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{frontend/layout/base}">
-<div layout:fragment="MainBase">
-    <h3>Experiencia en el sector profesional de la informática</h3>
-        <p>
+<body>
+<div layout:fragment="MainBase" class="container">
+    <h3 class="center-align">Experiencia en el sector profesional de la informática</h3>
+    <div class="section">
+        <p class="flow-text">
             He trabajado durante varios años en proyectos de desarrollo de software,
             gestión de sistemas y diseño de soluciones tecnológicas.
         </p>
-
-        <h3>Proyectos realizados</h3>
-        <ul>
-            <li><strong>Sistema de Gestión de Inventarios:</strong> Aplicación con Python y Django.</li>
-            <li><strong>Plataforma de E-learning:</strong> React y Node.js.</li>
-            <li><strong>Automatización de Procesos Empresariales:</strong> Scripts para optimización.</li>
-            <li><strong>Aplicación Móvil para Gestión Personal:</strong> Desarrollo en Flutter y Firebase.</li>
+    </div>
+    <div class="section">
+        <h3 class="center-align">Proyectos realizados</h3>
+        <ul class="collection">
+            <li class="collection-item"><strong>Sistema de Gestión de Inventarios:</strong> Aplicación con Python y Django.</li>
+            <li class="collection-item"><strong>Plataforma de E-learning:</strong> React y Node.js.</li>
+            <li class="collection-item"><strong>Automatización de Procesos Empresariales:</strong> Scripts para optimización.</li>
+            <li class="collection-item"><strong>Aplicación Móvil para Gestión Personal:</strong> Desarrollo en Flutter y Firebase.</li>
         </ul>
+    </div>
 </div>
+</body>
+</html>

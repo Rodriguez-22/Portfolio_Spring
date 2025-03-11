@@ -1,17 +1,38 @@
 <html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{frontend/layout/base}">
 <div layout:fragment="MainBase">
+    <script>
+        let slideIndex = 0;
+        function moveSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            slides.forEach((slide, index) => {
+                slide.style.display = (index === slideIndex) ? 'block' : 'none';
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => moveSlide(0));
+    </script>
     <!-- Contenido principal -->
-     <link rel="stylesheet" href="../css/index.css">
-    <figure>
-        <img src="../imagenes/IMG_1216.jpg" alt="Foto de Jose">
-    </figure>
-    
+    <link rel="stylesheet" href="../css/index.css">
+    <section class="carousel">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="carousel-container">
+            <img class="slide" src="../imagenes/Foto_mia.jpg" alt="Imagen 1">
+            <img class="slide" src="../imagenes/IMG_1474.jpg" alt="Imagen 2">
+            <img class="slide" src="../imagenes/IMG_0389.jpg" alt="Imagen 3">
+        </div>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </section>
+
     <section>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d203265.30209134918!2d-2.259458310051265!3d37.24722476020597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7ad2f2238a6257%3A0x403d278a575deb0!2zQW50YXMsIEFsbWVyw61h!5e0!3m2!1ses!2ses!4v1706532546785!5m2!1ses!2ses"
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d203265.30209134918!2d-2.259458310051265!3d37.24722476020597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7ad2f2238a6257%3A0x403d278a575deb0!2zQW50YXMsIEFsbWVyw61h!5e0!3m2!1ses!2ses!4v1706532546785!5m2!1ses!2ses"
             style="border:0;" allowfullscreen="">
         </iframe>
     </section>
-    
+
     <article>
         <p class="texto">
             Muy buenas, mi nombre es Jose Rodríguez Rodríguez, tengo 18 años y vivo en Antas.<br>
@@ -22,4 +43,52 @@
         </p>
     </article>
 
+    <article>
+        <p class="texto"><b><u><i>Cursos que me han ayudado con la Programación</i></u></b></p>
+    </article>
+    <div class="container">
+        <div class="row center-align">
+          <div class="col s12 m2 offset-m3">
+            <div class="card">
+              <div class="card-image">
+                <img src="imagenes/JavaScript.jpg" class="carta-img">
+              </div>
+              <div class="card-content">
+                <p>Curso de JavaScript</p>
+              </div>
+              <div class="card-action">
+                <a href="https://www.aprendejavascript.dev/">Link JavaScript</a>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col s12 m2">
+            <div class="card">
+              <div class="card-image">
+                <img src="imagenes/SpringBoot.png" class="carta-img">
+              </div>
+              <div class="card-content">
+                <p>Curso de Spring Boot</p>
+              </div>
+              <div class="card-action">
+                <a href="https://codigofacilito.com/cursos/spring-framework-spring-boot">Link Spring</a>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col s12 m2">
+            <div class="card">
+              <div class="card-image">
+                <img src="imagenes/HTML.png" class="carta-img">
+              </div>
+              <div class="card-content">
+                <p>Curso de HTML5</p>
+              </div>
+              <div class="card-action">
+                <a href="https://www.freecodecamp.org/espanol/news/aprende-html-y-css-curso-desde-cero/">Link HTML5</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>

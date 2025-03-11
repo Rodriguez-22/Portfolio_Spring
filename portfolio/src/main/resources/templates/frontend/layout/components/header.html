@@ -1,7 +1,12 @@
 <!-- Es un componente complejo -->
 <header th:fragment="headerBase">
+    <style>
+        .brand-logo {
+            margin-left: 10px;
+        }
+    </style>
     <nav>
-        <div class="nav-wrapper red">
+        <div class="nav-wrapper orange">
             <a href="/" class="brand-logo">José</a>
             <a href="#" data-target="mobile-menu" class="sidenav-trigger">
                 <i class="material-icons">menu</i>
@@ -19,8 +24,8 @@
     <!-- Menú lateral en móvil -->
     <ul class="sidenav" id="mobile-menu">
         <li><a href="/preguntas">Preguntas</a></li>
-        <li><a href="/curriculum">Experiencia</a></li>
-        <li><a href="/contacto">Curriculum</a></li>
+        <li><a href="/experiencia">Experiencia</a></li>
+        <li><a href="/curriculum">Curriculum</a></li>
         <li><a href="/contacto">Contacto</a></li>
     </ul>
 </header>
