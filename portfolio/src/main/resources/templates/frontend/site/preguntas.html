@@ -1,25 +1,69 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{frontend/layout/base}">
+  <head>
+    <meta charset="UTF-8">
+    <title>Preguntas Frecuentes</title>
+    <script>
+      window.onload = function() {
+        // Obtener todos los elementos con la clase 'collection-item'
+        const items = document.querySelectorAll('.collection-item');
+        
+        // Crear un objeto con las preguntas y sus respuestas correspondientes
+        const respuestas = {
+          "¿Quién eres y cuál es tu experiencia profesional?": "Soy un desarrollador con 5 años de experiencia en la creación de aplicaciones web.",
+          "¿Qué habilidades técnicas posees?": "Tengo habilidades en HTML, CSS, JavaScript, React, Node.js y bases de datos.",
+          "¿Cuál es tu formación académica?": "Tengo una licenciatura en Ingeniería de Software por la Universidad XYZ.",
+          "¿Qué proyectos has realizado hasta ahora?": "He trabajado en aplicaciones web como un sistema de gestión de tareas y una plataforma de comercio electrónico.",
+          "¿Qué idiomas hablas y en qué nivel?": "Hablan Español y Inglés a nivel avanzado.",
+          "¿Qué te motiva a trabajar en este campo?": "Me motiva crear soluciones tecnológicas que resuelvan problemas reales y ayuden a las personas.",
+          "¿Cuál es tu objetivo profesional a largo plazo?": "Mi objetivo es convertirme en arquitecto de software y liderar equipos de desarrollo.",
+          "¿Estás abierto/a a trabajos remotos o presenciales?": "Estoy abierto tanto a trabajos remotos como presenciales, dependiendo de la oportunidad.",
+          "¿Cómo gestionas el trabajo en equipo?": "Creo en la colaboración activa, el respeto mutuo y la comunicación constante dentro de un equipo.",
+          "¿Dónde se pueden encontrar más detalles sobre tu experiencia?": "Puedes consultar mi perfil de LinkedIn y GitHub para más detalles sobre mis proyectos y logros."
+        };
 
-<body>
+        // Añadir un evento de clic a cada elemento de la lista
+        items.forEach(function(item) {
+          item.addEventListener('click', function() {
+            // Verificar si el texto es una pregunta o una respuesta
+            const pregunta = item.getAttribute('data-pregunta');
+            const respuesta = respuestas[pregunta];
+
+            // Si la pregunta ya ha sido cambiada a respuesta, volvemos a la pregunta
+            if (item.textContent === respuesta) {
+              item.textContent = pregunta;  // Restaurar la pregunta original
+            } else {
+              item.textContent = respuesta; // Cambiar a la respuesta
+            }
+          });
+
+          // Asignar el texto original de la pregunta al atributo 'data-pregunta'
+          const preguntaOriginal = item.textContent;
+          item.setAttribute('data-pregunta', preguntaOriginal);
+        });
+      };
+    </script>
+  </head>
+
+  <body>
     <div layout:fragment="MainBase">
-        <section class="container">
-            <ul class="collection with-header">
-                <li class="collection-header">
-                    <h4>Preguntas Frecuentes</h4>
-                </li>
-                <li class="collection-item">¿Quién eres y cuál es tu experiencia profesional?</li>
-                <li class="collection-item">¿Qué habilidades técnicas posees?</li>
-                <li class="collection-item">¿Cuál es tu formación académica?</li>
-                <li class="collection-item">¿Qué proyectos has realizado hasta ahora?</li>
-                <li class="collection-item">¿Qué idiomas hablas y en qué nivel?</li>
-                <li class="collection-item">¿Qué te motiva a trabajar en este campo?</li>
-                <li class="collection-item">¿Cuál es tu objetivo profesional a largo plazo?</li>
-                <li class="collection-item">¿Estás abierto/a a trabajos remotos o presenciales?</li>
-                <li class="collection-item">¿Cómo gestionas el trabajo en equipo?</li>
-                <li class="collection-item">¿Dónde se pueden encontrar más detalles sobre tu experiencia?</li>
-            </ul>
-        </section>
+      <section class="container">
+        <ul class="collection with-header">
+          <li class="collection-header">
+            <h4>Preguntas Frecuentes</h4>
+          </li>
+          <li class="collection-item">¿Quién eres y cuál es tu experiencia profesional?</li>
+          <li class="collection-item">¿Qué habilidades técnicas posees?</li>
+          <li class="collection-item">¿Cuál es tu formación académica?</li>
+          <li class="collection-item">¿Qué proyectos has realizado hasta ahora?</li>
+          <li class="collection-item">¿Qué idiomas hablas y en qué nivel?</li>
+          <li class="collection-item">¿Qué te motiva a trabajar en este campo?</li>
+          <li class="collection-item">¿Cuál es tu objetivo profesional a largo plazo?</li>
+          <li class="collection-item">¿Estás abierto/a a trabajos remotos o presenciales?</li>
+          <li class="collection-item">¿Cómo gestionas el trabajo en equipo?</li>
+          <li class="collection-item">¿Dónde se pueden encontrar más detalles sobre tu experiencia?</li>
+        </ul>
+      </section>
     </div>
-</body>
-
+  </body>
 </html>

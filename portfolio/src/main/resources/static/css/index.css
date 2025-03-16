@@ -24,7 +24,7 @@ iframe {
     border-radius: 10px;
 }
 
-.texto{
+.texto {
     color: black;
     font-size: 16px;
     line-height: 1.5;
@@ -50,7 +50,8 @@ iframe {
     width: 100%;
 }
 
-.prev, .next {
+.prev,
+.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -61,15 +62,38 @@ iframe {
     cursor: pointer;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev {
+    left: 10px;
+}
 
-.prev:hover, .next:hover {
+.next {
+    right: 10px;
+}
+
+.prev:hover,
+.next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
 .row {
-    justify-content: center; /* Centra las tarjetas horizontalmente */
-    flex-wrap: wrap; /* Asegura que sean responsivas */
-    gap: 20px; /* Espacio entre tarjetas */
-  }
+    justify-content: center;
+    /* Centra las tarjetas horizontalmente */
+    flex-wrap: wrap;
+    /* Asegura que sean responsivas */
+    gap: 20px;
+    /* Espacio entre tarjetas */
+}
+
+@media (max-width: 768px) {
+    article {
+        padding: 0 20px;
+        /* Añade 20px de espacio a los lados en pantallas pequeñas */
+    }
+
+    .texto {
+        font-size: 16px;
+        /* Ajusta el tamaño de la fuente si lo deseas */
+        line-height: 1.5;
+        /* Ajusta el interlineado para mejorar la legibilidad */
+    }
+}
